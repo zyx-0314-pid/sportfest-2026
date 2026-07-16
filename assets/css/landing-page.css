@@ -130,10 +130,15 @@ h1, h2, h3, p { margin-top: 0; }
 .checkList li { position: relative; padding: 8px 0 8px 27px; }
 .checkList li::before { content: ""; position: absolute; width: 8px; height: 8px; left: 0; top: 17px; background: var(--orange-500); transform: rotate(45deg); }
 
-.siteFooter { max-width: var(--content-width); min-height: 110px; margin: 0 auto; padding: 30px 24px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-blue); color: var(--muted-blue); font-size: .78rem; }
+.siteFooter { max-width: var(--content-width); min-height: 150px; margin: 0 auto; padding: 30px 24px; display: flex; justify-content: space-between; align-items: center; gap: 40px; border-top: 1px solid var(--border-blue); color: var(--muted-blue); font-size: .78rem; }
 .siteFooter p { margin: 0; }
-.siteFooter p:first-child { font-family: var(--heading-font); font-size: 1.2rem; text-transform: uppercase; font-weight: 800; color: var(--white); }
-.siteFooter span { color: var(--orange-500); }
+.footerEventSummary { display: grid; gap: 7px; }
+.footerEventName { font-family: var(--heading-font); font-size: 1.2rem; text-transform: uppercase; font-weight: 800; color: var(--white); }
+.footerEventName span { color: var(--orange-500); }
+.systemCredits { width: min(100%, 270px); border: 1px solid var(--border-blue); background: var(--navy-900); }
+.systemCredits > p { padding: 8px 14px; color: var(--orange-400); font-size: .62rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+.systemCredits ul { margin: 0; padding: 0; list-style: none; }
+.systemCredits li { padding: 10px 14px; color: var(--white); border-top: 1px solid var(--border-blue); font-size: .84rem; font-weight: 700; }
 
 @media (max-width: 900px) {
   .navigationToggle { display: block; cursor: pointer; }
@@ -169,7 +174,8 @@ h1, h2, h3, p { margin-top: 0; }
   .programTimeline li > div:last-child { grid-column: 2; }
   .gameHero { min-height: 480px; padding-top: 65px; padding-bottom: 75px; }
   .informationCard { min-height: auto; padding: 30px 25px; }
-  .siteFooter { flex-direction: column; justify-content: center; gap: 8px; text-align: center; }
+  .siteFooter { flex-direction: column; justify-content: center; gap: 24px; text-align: center; }
+  .systemCredits { text-align: left; }
 }
 
 @media (prefers-reduced-motion: reduce) {
