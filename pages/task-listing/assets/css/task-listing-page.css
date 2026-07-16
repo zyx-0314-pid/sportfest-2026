@@ -5,11 +5,17 @@
   --blue-700: #173aa0;
   --orange-500: #f89a1c;
   --orange-400: #ffad35;
+  --teal-400: #5ed6c3;
   --peach-200: #ffcbb3;
   --cream-100: #fff9ef;
   --white: #ffffff;
   --muted-blue: #a8b5cb;
   --border-blue: rgba(255, 255, 255, 0.14);
+  --court-line-color: rgba(255, 255, 255, 0.055);
+  --court-card-panel: rgba(3, 22, 51, 0.58);
+  --court-card-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  --contact-card-surface: rgba(255, 255, 255, 0.045);
+  --contact-avatar-surface: #dce6f4;
   --heading-font: "Barlow Condensed", Impact, sans-serif;
   --body-font: "Inter", Arial, sans-serif;
   --content-width: 1180px;
@@ -84,13 +90,47 @@ h1, h2, h3, p { margin-top: 0; }
 .pageHero > div > p:last-child { max-width: 650px; margin-bottom: 0; color: var(--muted-blue); }
 .pageHeroNumber { font-family: var(--heading-font); font-weight: 900; color: rgba(255,255,255,.04); font-size: 15rem; line-height: .65; position: absolute; right: max(24px, calc((100% - var(--content-width)) / 2)); bottom: -15px; }
 
-.roleTableWrapper { overflow-x: auto; border: 1px solid var(--border-blue); }
-.roleTable { width: 100%; min-width: 820px; border-collapse: collapse; }
-.roleTable th { padding: 18px 22px; text-align: left; color: var(--orange-400); background: rgba(255,255,255,.045); text-transform: uppercase; font-size: .68rem; letter-spacing: .15em; }
-.roleTable td { padding: 24px 22px; border-top: 1px solid var(--border-blue); color: #cfdaeb; }
-.roleTable td:first-child { display: flex; align-items: center; gap: 15px; color: var(--white); }
+.contactAssignmentCardGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.contactAssignmentCard { --contact-accent: var(--orange-500); min-height: 350px; padding: 26px; display: flex; flex-direction: column; position: relative; isolation: isolate; overflow: hidden; border: 1px solid var(--border-blue); background: linear-gradient(150deg, var(--contact-card-surface), transparent); transition: border-color .25s ease, transform .25s ease; }
+.contactAssignmentCard::before { content: ""; position: absolute; z-index: -1; width: 150px; height: 150px; right: -75px; top: -75px; border-radius: 50%; background: var(--contact-accent); opacity: .1; }
+.contactAssignmentCard::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--contact-accent); }
+.contactAssignmentCardPickleball { --contact-accent: var(--teal-400); }
+.contactAssignmentCardOperations { --contact-accent: var(--peach-200); }
+.contactAssignmentCardRecords { --contact-accent: var(--orange-400); }
+.contactAssignmentCardHeader { display: flex; align-items: center; justify-content: space-between; gap: 15px; color: var(--contact-accent); font-size: .64rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.contactAssignmentCardHeader span:last-child { padding: 5px 9px; border: 1px solid var(--contact-accent); }
+.contactAssignmentCard h3 { margin: 32px 0 10px; font-family: var(--heading-font); font-size: 2.15rem; line-height: .94; text-transform: uppercase; }
+.contactAssignmentTask { margin-bottom: 28px; color: var(--muted-blue); font-size: .82rem; font-weight: 600; }
+.contactProfile { margin-top: auto; padding-top: 20px; display: grid; grid-template-columns: 72px 1fr; gap: 15px; align-items: center; border-top: 1px solid var(--border-blue); }
+.contactProfileList { margin-top: auto; }
+.contactProfileList .contactProfile { margin-top: 0; }
+.contactProfileList .contactProfile + .contactProfile { margin-top: 14px; }
+.contactProfile img { width: 72px; height: 72px; object-fit: cover; border: 2px solid var(--contact-accent); border-radius: 50%; background: var(--contact-avatar-surface); }
+.contactProfile div { min-width: 0; }
+.contactProfile span, .contactProfile strong { display: block; }
+.contactProfile span { margin-bottom: 3px; color: var(--muted-blue); font-size: .62rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.contactProfile strong { overflow-wrap: anywhere; font-size: .92rem; }
 .roleIndex { color: var(--orange-500); font-size: .7rem; font-weight: 800; }
-.assignmentPending { display: inline-block; color: var(--peach-200); border: 1px solid rgba(255,203,179,.3); padding: 5px 10px; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; white-space: nowrap; }
+.umpireSectionHeading { margin-top: 70px; }
+.courtUmpireCardGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.courtUmpireCard { --court-accent: var(--orange-500); min-height: 390px; padding: 32px; position: relative; isolation: isolate; overflow: hidden; border: 1px solid var(--border-blue); background: linear-gradient(145deg, rgba(10, 43, 89, .92), rgba(3, 22, 51, .98)); box-shadow: var(--court-card-shadow); transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease; }
+.courtUmpireCard::before { content: ""; position: absolute; z-index: -1; width: 170px; height: 260px; right: -48px; top: 56px; border: 1px solid var(--court-line-color); box-shadow: inset 0 0 0 42px transparent, 0 0 0 42px var(--court-line-color); transform: skew(-10deg) rotate(12deg); }
+.courtUmpireCard::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--court-accent); }
+.courtUmpireCardPickleball { --court-accent: var(--teal-400); }
+.courtUmpireCardHeader { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.courtUmpireCard .roleIndex { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--border-blue); color: var(--court-accent); background: rgba(255, 255, 255, .035); }
+.courtSportBadge { padding: 6px 11px; border: 1px solid var(--court-accent); color: var(--court-accent); font-size: .66rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.courtIdentity { margin: 34px 0 30px; position: relative; z-index: 1; }
+.courtUmpireCard h3 { margin-bottom: 9px; font-family: var(--heading-font); font-size: clamp(3.4rem, 6vw, 4.8rem); line-height: .82; letter-spacing: -.02em; text-transform: uppercase; }
+.courtPosition { display: inline-flex; align-items: center; gap: 9px; margin: 0; color: var(--peach-200); font-size: .7rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+.courtPosition::before { content: ""; width: 22px; height: 2px; background: var(--court-accent); }
+.courtUmpireAssignment { padding: 20px 22px; position: relative; z-index: 1; border: 1px solid var(--border-blue); background: var(--court-card-panel); backdrop-filter: blur(8px); }
+.courtUmpireLabel { margin-bottom: 10px; color: var(--muted-blue); font-size: .64rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.courtUmpireNames { margin: 0; padding: 0; list-style: none; }
+.courtUmpireNames li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: center; padding: 8px 0; color: var(--white); }
+.courtUmpireNames li + li { border-top: 1px solid var(--border-blue); }
+.courtUmpireNames li span { color: var(--court-accent); font-size: .62rem; font-weight: 800; }
+.courtUmpireNames strong { font-size: .94rem; }
 .calloutSection { max-width: var(--content-width); margin: 0 auto 100px; padding: 50px; display: grid; grid-template-columns: auto 1fr; gap: 34px; align-items: center; border: 1px solid rgba(248,154,28,.4); background: linear-gradient(115deg, rgba(248,154,28,.14), rgba(248,154,28,.03)); }
 .calloutMark { width: 80px; height: 80px; display: grid; place-items: center; border-radius: 50%; background: var(--orange-500); color: var(--navy-950); font-family: var(--heading-font); font-size: 3.7rem; font-weight: 900; }
 .calloutSection h2 { font-size: clamp(2rem, 4vw, 3.3rem); margin-bottom: 10px; }
@@ -143,8 +183,14 @@ h1, h2, h3, p { margin-top: 0; }
   .heroSection { grid-template-columns: 1fr; padding-top: 70px; }
   .heroScoreCard { max-width: 420px; }
   .sectionHeadingHorizontal, .reminderBanner { grid-template-columns: 1fr; gap: 25px; }
+  .contactAssignmentCardGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .gameHero { grid-template-columns: 1fr; }
   .sportGraphic { position: absolute; right: -100px; bottom: -85px; opacity: .28; }
+}
+
+@media (hover: hover) {
+  .contactAssignmentCard:hover { border-color: var(--contact-accent); transform: translateY(-4px); }
+  .courtUmpireCard:hover { border-color: var(--court-accent); transform: translateY(-5px); box-shadow: 0 30px 70px rgba(0, 0, 0, .34); }
 }
 
 @media (max-width: 640px) {
@@ -155,6 +201,11 @@ h1, h2, h3, p { margin-top: 0; }
   .heroCopy h1 { font-size: 4.2rem; }
   .heroScoreCard { padding: 25px; }
   .scoreCardNumber { font-size: 6.5rem; }
+  .contactAssignmentCardGrid { grid-template-columns: 1fr; }
+  .contactAssignmentCard { min-height: 320px; }
+  .courtUmpireCardGrid { grid-template-columns: 1fr; }
+  .courtUmpireCard { min-height: auto; padding: 28px 24px 24px; }
+  .courtUmpireCard h3 { font-size: 3.7rem; }
   .quickLinksSection, .contentSection { padding: 70px 20px; }
   .quickLinkGrid, .gameInformationGrid { grid-template-columns: 1fr; }
   .quickLinkCard { grid-template-columns: 30px 1fr auto; border-right: 0; padding: 25px 12px; }
