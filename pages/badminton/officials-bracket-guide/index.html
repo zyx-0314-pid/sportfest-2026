@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="Badminton bracket update instructions for authorized event officials.">
+  <title>Bracket Update Guide | TPG Sports Fest 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/badminton-page.css">
+</head>
+<body>
+  <header class="siteHeader">
+    <a class="eventBrand" href="../../../index.html" aria-label="TPG Sports Fest 2026 home"><span class="eventBrandYear">2026</span><span class="eventBrandName">TPG Sports Fest</span></a>
+    <a class="updateGuideReturnLink" href="../">← Badminton bracket</a>
+  </header>
+  <main class="updateGuidePage">
+    <section class="badmintonUpdateNotes" aria-labelledby="badmintonUpdateHeading">
+      <span class="informationNumber">Officials only</span>
+      <div>
+        <p class="sectionKicker">Unlisted bracket instructions</p>
+        <h1 id="badmintonUpdateHeading">How to add or change names</h1>
+        <ol>
+          <li>Open <code>pages/badminton/assets/js/badminton-page.js</code>.</li>
+          <li>Find <code>BADMINTON_PAIR_ENTRIES</code> at the top of the file.</li>
+          <li>Edit the two values inside the pair's <code>playerNames</code> list. Each pair must always have exactly two names.</li>
+          <li>Keep every <code>pairId</code> unchanged because the match schedule uses those IDs to move pairs through the bracket.</li>
+        </ol>
+        <h2>How to record a result</h2>
+        <p>Find the completed match inside <code>BADMINTON_MATCH_ENTRIES</code>. Change its <code>winningPairId</code> from <code>null</code> to the winning pair ID, such as <code>"pairA"</code>. Later matches, winner names, and loser names update automatically.</p>
+        <h2>How to change the active courts</h2>
+        <p>Find <code>ACTIVE_BADMINTON_MATCH_IDS</code> and enter exactly two match IDs—one for each active court. Both matches must already have two resolved pairs. Player avatars use each name as their DiceBear seed and update automatically when a name changes.</p>
+        <aside class="updateGuideWarning"><strong>Important:</strong> Enter results in match order. A later result cannot be resolved until all matches feeding into it have a recorded winner.</aside>
+      </div>
+    </section>
+  </main>
+  <footer class="siteFooter"><p>TPG Sports Fest <span>2026</span></p><p>Bracket administration guide</p></footer>
+</body>
+</html>
