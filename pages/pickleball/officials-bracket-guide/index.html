@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="Pickleball bracket update instructions for authorized event officials.">
+  <title>Pickleball Bracket Update Guide | TPG Sports Fest 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/pickleball-page.css">
+  <link rel="stylesheet" href="../../../assets/css/doubles-tournament-bracket.css">
+</head>
+<body>
+  <header class="siteHeader">
+    <a class="eventBrand" href="../../../index.html" aria-label="TPG Sports Fest 2026 home"><span class="eventBrandYear">2026</span><span class="eventBrandName">TPG Sports Fest</span></a>
+    <a class="updateGuideReturnLink" href="../">← Pickleball bracket</a>
+  </header>
+  <main class="updateGuidePage">
+    <section class="tournamentUpdateNotes" aria-labelledby="pickleballUpdateHeading">
+      <span class="informationNumber">Officials only</span>
+      <div>
+        <p class="sectionKicker">Unlisted bracket instructions</p>
+        <h1 id="pickleballUpdateHeading">How to update pickleball</h1>
+        <ol>
+          <li>Open <code>pages/pickleball/assets/js/pickleball-page.js</code>.</li>
+          <li>Edit names only inside <code>PICKLEBALL_PAIR_ENTRIES</code>. Each pair must contain exactly two names.</li>
+          <li>Keep every <code>pairId</code> unchanged because progression uses those IDs.</li>
+          <li>Record a completed match by changing its <code>winningPairId</code> from <code>null</code> to the winning pair ID.</li>
+        </ol>
+        <h2>How to change the active courts</h2>
+        <p>Enter exactly two ready match IDs inside <code>ACTIVE_PICKLEBALL_MATCH_IDS</code>. The selected matches must use different courts and both participant pairs must already be resolved.</p>
+        <aside class="updateGuideWarning"><strong>Important:</strong> Enter results in match order before activating matches that depend on those results. Invalid or unresolved progression raises an explicit error.</aside>
+      </div>
+    </section>
+  </main>
+  <footer class="siteFooter"><p>TPG Sports Fest <span>2026</span></p><p>Pickleball bracket administration guide</p></footer>
+</body>
+</html>
