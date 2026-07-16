@@ -77,6 +77,62 @@ h1, h2, h3, p { margin-top: 0; }
 .reminderBanner .sectionKicker { color: var(--navy-800); }
 .reminderBanner > p { margin: 0; font-weight: 600; position: relative; z-index: 1; }
 
+.departmentTickerSection { max-width: 1440px; margin: 0 auto; padding: 64px 0; overflow: hidden; border-top: 1px solid var(--border-blue); border-bottom: 1px solid var(--border-blue); background: var(--navy-900); }
+.departmentTickerHeading { max-width: var(--content-width); margin: 0 auto 32px; padding: 0 24px; display: flex; align-items: end; justify-content: space-between; gap: 30px; }
+.departmentTickerHeading .sectionKicker { margin-bottom: 5px; }
+.departmentTickerHeading h2 { margin: 0; font-family: var(--heading-font); font-size: clamp(2.5rem, 5vw, 4rem); line-height: .9; text-transform: uppercase; }
+.departmentTickerWindow { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.departmentTickerTrack { width: max-content; display: flex; animation: departmentTickerScroll 34s linear infinite; }
+.departmentTickerWindow:hover .departmentTickerTrack { animation-play-state: paused; }
+.departmentTickerList { margin: 0; padding: 0 16px 0 0; display: flex; align-items: center; list-style: none; }
+.departmentTickerList li { min-width: 135px; padding: 15px 26px; color: var(--white); border-left: 1px solid var(--border-blue); font-family: var(--heading-font); font-size: 1.7rem; font-style: italic; font-weight: 800; letter-spacing: .04em; text-align: center; }
+.departmentTickerList li::before { content: "◆"; margin-right: 13px; color: var(--orange-500); font-size: .48rem; vertical-align: middle; }
+
+.organizationSection, .recognitionSection { max-width: var(--content-width); margin: 0 auto; padding: 100px 24px; }
+.organizationSection { padding-bottom: 70px; }
+.companyStructure { max-width: 1040px; margin: 0 auto; }
+.parentCompanyCard { max-width: 480px; margin: 0 auto; padding: 34px; position: relative; overflow: hidden; border: 1px solid rgba(248,154,28,.55); background: linear-gradient(135deg, rgba(248,154,28,.16), rgba(10,43,89,.65)); text-align: center; }
+.parentCompanyCard::after { content: "TPG"; position: absolute; right: -8px; bottom: -28px; color: rgba(255,255,255,.035); font-family: var(--heading-font); font-size: 8rem; font-weight: 900; line-height: 1; }
+.parentCompanyCard > span, .subsidiaryCard > span { color: var(--orange-400); font-size: .62rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.parentCompanyCard h3 { margin: 10px 0 8px; position: relative; z-index: 1; font-family: var(--heading-font); font-size: 2.8rem; line-height: 1; text-transform: uppercase; }
+.parentCompanyCard p { margin: 0; position: relative; z-index: 1; color: var(--muted-blue); font-size: .85rem; }
+.subsidiaryConnector { height: 64px; position: relative; }
+.subsidiaryConnector::before { content: ""; position: absolute; top: 0; bottom: 25px; left: 50%; width: 1px; background: var(--orange-500); }
+.subsidiaryConnector::after { content: ""; position: absolute; right: 16.66%; bottom: 24px; left: 16.66%; height: 1px; background: var(--orange-500); }
+.subsidiaryConnector span::before, .subsidiaryConnector span::after { content: ""; position: absolute; bottom: 0; width: 1px; height: 25px; background: var(--orange-500); }
+.subsidiaryConnector span::before { left: 16.66%; }
+.subsidiaryConnector span::after { right: 16.66%; }
+.subsidiaryGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.subsidiaryCard { min-height: 185px; padding: 27px; display: flex; flex-direction: column; justify-content: space-between; color: inherit; border: 1px solid var(--border-blue); background: var(--navy-900); text-decoration: none; transition: border-color .2s ease, transform .2s ease, background .2s ease; }
+a.subsidiaryCard:hover { border-color: var(--orange-500); background: var(--navy-800); transform: translateY(-4px); }
+.subsidiaryCard h3 { margin: 28px 0 10px; font-family: var(--heading-font); font-size: 1.8rem; line-height: 1; text-transform: uppercase; }
+.subsidiaryCard p { margin: 0; color: var(--muted-blue); font-size: .74rem; }
+.subsidiaryCard p b { margin-left: 5px; color: var(--orange-400); }
+
+.recognitionSection { padding-top: 70px; }
+.recognitionGrid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 20px; }
+.organizerRecognition, .partnerRecognition { padding: 34px; border: 1px solid var(--border-blue); background: var(--navy-900); }
+.organizerRecognition { background: linear-gradient(145deg, rgba(10,43,89,.9), rgba(6,29,66,.9)); }
+.recognitionCardHeading { display: flex; align-items: center; gap: 16px; }
+.recognitionCardHeading > span { width: 52px; height: 52px; display: grid; place-items: center; flex: 0 0 auto; color: var(--navy-950); background: var(--orange-500); font-family: var(--heading-font); font-size: 1.3rem; font-weight: 900; transform: skew(-7deg); }
+.recognitionCardHeading p { margin: 0 0 2px; color: var(--orange-400); font-size: .6rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.recognitionCardHeading h3 { margin: 0; font-family: var(--heading-font); font-size: 2rem; line-height: 1; text-transform: uppercase; }
+.recognitionIntroduction { margin: 26px 0 20px; color: var(--muted-blue); font-size: .85rem; }
+.organizerList { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--border-blue); }
+.organizerList li { min-height: 58px; padding: 12px 0; display: grid; grid-template-columns: 35px 1fr; align-items: center; border-bottom: 1px solid var(--border-blue); }
+.organizerList span { color: var(--orange-500); font-size: .6rem; font-weight: 800; }
+.organizerList strong { color: var(--white); font-size: .82rem; }
+.partnerGrid { margin-top: 28px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; }
+.partnerMark { min-height: 76px; padding: 12px; display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--navy-950); background: var(--white); border: 1px solid rgba(255,255,255,.2); font-size: 1.15rem; font-weight: 800; text-align: center; }
+.partnerMark small { display: block; max-width: 150px; font-size: .48rem; font-weight: 700; line-height: 1.25; }
+.partnerLockton { color: #092b59; font-size: 1.35rem; text-transform: uppercase; }
+.partnerICare { color: #ef7d13; font-size: 1.65rem; }
+.partnerOrganica { color: #74a800; font-family: Georgia, serif; }
+.partnerHerbalife { color: #176939; font-size: 1.3rem; }
+.partnerOccp { color: #4b7023; }
+.partnerSunLife { color: #14375f; font-family: Georgia, serif; font-size: 1.4rem; }
+.partnerNwd { color: #c72127; }
+
 .pageHero { min-height: 390px; padding: 75px max(24px, calc((100% - var(--content-width)) / 2)); display: flex; justify-content: space-between; align-items: flex-end; background: linear-gradient(110deg, var(--navy-950), var(--navy-900)); overflow: hidden; position: relative; border-bottom: 1px solid var(--border-blue); }
 .pageHero::before { content: ""; position: absolute; width: 500px; height: 120px; right: -80px; top: -25px; background: var(--orange-500); transform: skew(-32deg); box-shadow: -130px 0 var(--peach-200), 130px 0 var(--blue-700); opacity: .9; }
 .pageHero > div { position: relative; z-index: 2; max-width: 780px; }
@@ -148,6 +204,7 @@ h1, h2, h3, p { margin-top: 0; }
   .heroSection { grid-template-columns: 1fr; padding-top: 70px; }
   .heroScoreCard { max-width: 420px; }
   .sectionHeadingHorizontal, .reminderBanner { grid-template-columns: 1fr; gap: 25px; }
+  .recognitionGrid { grid-template-columns: 1fr; }
   .gameHero { grid-template-columns: 1fr; }
   .sportGraphic { position: absolute; right: -100px; bottom: -85px; opacity: .28; }
 }
@@ -164,6 +221,15 @@ h1, h2, h3, p { margin-top: 0; }
   .quickLinkGrid, .gameInformationGrid { grid-template-columns: 1fr; }
   .quickLinkCard { grid-template-columns: 30px 1fr auto; border-right: 0; padding: 25px 12px; }
   .reminderBanner { padding-top: 55px; padding-bottom: 55px; }
+  .departmentTickerSection { padding: 50px 0; }
+  .departmentTickerHeading { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .departmentTickerList li { min-width: 115px; padding: 12px 18px; font-size: 1.4rem; }
+  .organizationSection, .recognitionSection { padding: 70px 20px; }
+  .subsidiaryConnector { display: none; }
+  .subsidiaryGrid { margin-top: 16px; grid-template-columns: 1fr; }
+  .subsidiaryCard { min-height: 150px; }
+  .organizerRecognition, .partnerRecognition { padding: 28px 22px; }
+  .partnerGrid { grid-template-columns: 1fr 1fr; }
   .pageHero { min-height: 330px; padding-top: 60px; }
   .pageHero h1, .gameHero h1 { font-size: 4.5rem; }
   .pageHeroNumber { display: none; }
@@ -181,4 +247,11 @@ h1, h2, h3, p { margin-top: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; }
+  .departmentTickerTrack { animation: none; }
+  .departmentTickerWindow { overflow-x: auto; mask-image: none; }
+}
+
+@keyframes departmentTickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
