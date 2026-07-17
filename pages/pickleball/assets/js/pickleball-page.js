@@ -36,7 +36,7 @@ const PICKLEBALL_MATCH_ENTRIES = Object.freeze([
   },
   {
     setNumber: 2, courtLabel: "Court 2", matchId: "M4",
-    teamOneSource: { pairId: "pairG" }, teamTwoSource: { pairId: "pairH" }, winningPairId: null,
+    teamOneSource: { pairId: "pairG" }, teamTwoSource: { pairId: "pairH" }, winningPairId: "pairG",
     winnerDestination: { destinationType: "match", destinationLabel: "M7" },
     loserDestination: { destinationType: "match", destinationLabel: "M8" }
   },
